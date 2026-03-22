@@ -1,0 +1,167 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 20px;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+
+  /* 🔥 fundo azul escuro moderno */
+  background: radial-gradient(circle at top, #0b1220, #020617);
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* animação de entrada */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* glow decorativo */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.25),
+    transparent 70%
+  );
+
+  top: -250px;
+  left: -200px;
+
+  filter: blur(90px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.2),
+    transparent 70%
+  );
+
+  bottom: -200px;
+  right: -150px;
+
+  filter: blur(90px);
+}
+
+.content {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+/* título */
+
+.content h1 {
+  font-size: 56px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+/* subtítulo */
+
+.content p {
+  font-size: 18px;
+  color: #cbd5e1;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* botões */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* botão primário */
+
+.primary {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.primary:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: #2563eb;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* botão secundário */
+
+.secondary {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+
+  padding: 12px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.secondary:hover {
+  background: #1e293b;
+  border-color: #3b82f6;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* cursor animado */
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: #3b82f6;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 34px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}

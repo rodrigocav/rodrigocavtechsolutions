@@ -1,0 +1,121 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  backdrop-filter: blur(16px);
+  background: rgba(2, 6, 23, 0.6);
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(2, 6, 23, 0.85);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  height: 60px; /* ajustado (100px estava muito grande para header) */
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* MENU DESKTOP */
+.nav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+/* BOTÕES (substitui <a>) */
+.nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: #e2e8f0;
+  font-weight: 500;
+  font-size: 16px;
+
+  position: relative;
+  transition: 0.2s;
+}
+
+/* hover moderno com underline animado */
+.nav button::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.nav button:hover {
+  color: #ffffff;
+}
+
+.nav button:hover::after {
+  width: 100%;
+}
+
+/* HAMBURGUER */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #e2e8f0;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.95);
+
+    width: 220px;
+    padding: 20px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+  }
+
+  .active {
+    transform: translateX(0);
+  }
+
+  .nav button {
+    padding: 10px 0;
+    text-align: left;
+  }
+}

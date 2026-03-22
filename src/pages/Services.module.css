@@ -1,0 +1,87 @@
+.services {
+  padding: 100px 20px;
+  text-align: center;
+
+  /* 🔥 fundo dark azul */
+  background: radial-gradient(circle at top, #0b1220, #020617);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow decorativo */
+
+.services::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.2),
+    transparent 70%
+  );
+
+  top: -200px;
+  left: -150px;
+
+  filter: blur(90px);
+}
+
+.services::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15),
+    transparent 70%
+  );
+
+  bottom: -200px;
+  right: -150px;
+
+  filter: blur(90px);
+}
+
+/* TÍTULO */
+
+.services h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+/* GRID */
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+
+  align-items: stretch;
+  justify-items: stretch;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services h2 {
+    font-size: 32px;
+  }
+}

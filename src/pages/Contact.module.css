@@ -1,0 +1,162 @@
+.contact {
+  padding: 100px 20px;
+  text-align: center;
+
+  background: radial-gradient(circle at top, #0b1220, #020617);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* GLOW DECORATIVO */
+
+.contact::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.25),
+    transparent 70%
+  );
+
+  top: -200px;
+  left: -150px;
+
+  filter: blur(90px);
+}
+
+.contact::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.2),
+    transparent 70%
+  );
+
+  bottom: -200px;
+  right: -150px;
+
+  filter: blur(90px);
+}
+
+/* TÍTULO */
+
+.contact h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #ffffff;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* INFO */
+
+.info {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 40px;
+
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.info p {
+  margin-bottom: 10px;
+}
+
+.info a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+/* FORM */
+
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* INPUTS */
+
+.form input,
+.form textarea {
+  padding: 14px;
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(148, 163, 184, 0.1);
+
+  color: #fff;
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* TEXTAREA */
+
+.form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* BOTÃO */
+
+.form button {
+  padding: 14px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #3b82f6;
+  color: #fff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background: #2563eb;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 30px;
+  }
+}
