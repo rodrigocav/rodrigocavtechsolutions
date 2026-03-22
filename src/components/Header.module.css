@@ -24,11 +24,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: relative; /* ✅ importante para o menu mobile */
 }
 
 /* LOGO */
 .logo {
-  height: 60px; /* ajustado (100px estava muito grande para header) */
+  height: 60px;
   width: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -41,7 +43,7 @@
   align-items: center;
 }
 
-/* BOTÕES (substitui <a>) */
+/* BOTÕES */
 .nav button {
   background: none;
   border: none;
@@ -55,7 +57,7 @@
   transition: 0.2s;
 }
 
-/* hover moderno com underline animado */
+/* underline animado */
 .nav button::after {
   content: "";
   position: absolute;
@@ -108,6 +110,8 @@
 
     transform: translateX(120%);
     transition: transform 0.3s ease;
+
+    z-index: 1001; /* ✅ garante que fique acima */
   }
 
   .active {
@@ -117,5 +121,6 @@
   .nav button {
     padding: 10px 0;
     text-align: left;
+    width: 100%; /* ✅ ocupa toda largura */
   }
 }
