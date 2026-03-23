@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
-  const fullText: string =
+  const fullText =
     "Soluções tecnológicas para pequenas empresas crescerem com eficiência";
 
-  const [text, setText] = useState<string>("");
-  const [index, setIndex] = useState<number>(0);
-  const [finished, setFinished] = useState<boolean>(false);
-  const [visible, setVisible] = useState<boolean>(false);
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  // animação de entrada
+  // entrada da tela
   useEffect(() => {
     setVisible(true);
   }, []);
@@ -28,17 +28,18 @@ export default function Hero() {
     }, 40);
 
     return () => clearTimeout(timeout);
-  }, [index, fullText]);
+  }, [index]);
 
   return (
-    <section id="inicio" className={`${styles.hero} ${visible ? styles.show : ""}`}>
+    <section className={`${styles.hero} ${visible ? styles.show : ""}`}>
       <div className={styles.content}>
-        <h1>
+        
+        <h1 className={styles.typing}>
           {text}
           {!finished && <span className={styles.cursor}>|</span>}
         </h1>
 
-        <p>
+        <p className={styles.subtitle}>
           Desenvolvemos sites profissionais, sistemas de automação e soluções
           personalizadas para otimizar o seu negócio.
         </p>
@@ -47,10 +48,17 @@ export default function Hero() {
           <button className={styles.primary}>
             Solicitar orçamento
           </button>
-          <button className={styles.secondary}>
+
+          <a
+            href="https://wa.me/5511999752005"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.secondary}
+          >
             Saiba mais
-          </button>
+          </a>
         </div>
+
       </div>
     </section>
   );

@@ -1,9 +1,16 @@
+import { useEffect, useState } from "react";
 import styles from "./About.module.css";
 
-
 export default function About() {
+  const [visible, setVisible] = useState(false);
+
+  // animação de entrada
+  useEffect(() => {
+    setVisible(true);
+  }, []);
+
   return (
-    <section id="sobre" className={styles.about}>
+    <section id="sobre" className={`${styles.about} ${visible ? styles.show : ""}`}>
       <h2>Construindo soluções digitais modernas</h2>
 
       <p>
@@ -31,26 +38,53 @@ export default function About() {
             para entregar soluções completas e eficientes.
           </p>
         </div>
-
-
       </div>
 
       <div className={styles.stats}>
-        <div className={styles.stat}>
-          <div className={styles.statNumber}>20+</div>
-          <div className={styles.statLabel}>Projetos entregues</div>
-        </div>
-
-        <div className={styles.stat}>
-          <div className={styles.statNumber}>10+</div>
-          <div className={styles.statLabel}>Clientes atendidos</div>
-        </div>
-
-        <div className={styles.stat}>
-          <div className={styles.statNumber}>100%</div>
-          <div className={styles.statLabel}>Foco em planejamento junto com a qualidade</div>
-        </div>
+        <Stat number={20} label="Projetos entregues" />
+        <Stat number={10} label="Clientes atendidos" />
+        <Stat number={100} label="Qualidade garantida" suffix="%" />
       </div>
     </section>
+  );
+}
+
+/* 🔥 componente de animação dos números */
+function Stat({
+  number,
+  label,
+  suffix = "+",
+}: {
+  number: number;
+  label: string;
+  suffix?: string;
+}) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+
+    const interval = setInterval(() => {
+      start += 1;
+
+      if (start >= number) {
+        clearInterval(interval);
+        start = number;
+      }
+
+      setCount(start);
+    }, 20);
+
+    return () => clearInterval(interval);
+  }, [number]);
+
+  return (
+    <div className={styles.stat}>
+      <div className={styles.statNumber}>
+        {count}
+        {suffix}
+      </div>
+      <div className={styles.statLabel}>{label}</div>
+    </div>
   );
 }

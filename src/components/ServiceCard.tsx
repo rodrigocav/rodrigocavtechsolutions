@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import styles from "./ServiceCard.module.css";
 
 type Props = {
@@ -7,8 +8,29 @@ type Props = {
 };
 
 export default function ServiceCard({ title, description, image }: Props) {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.show);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className={styles.card}>
+    <div ref={ref} className={styles.card}>
       <div>
         <h3>{title}</h3>
         <p>{description}</p>

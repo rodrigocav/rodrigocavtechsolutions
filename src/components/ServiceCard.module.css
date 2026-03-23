@@ -14,20 +14,51 @@
 
   min-height: 260px;
 
-  transition: all 0.3s ease;
   cursor: pointer;
+
+  /* 🔥 animação */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+
+  position: relative;
+  overflow: hidden;
 }
 
-/* HOVER MODERNO */
+/* quando aparece */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/* efeito glow ao hover */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(59, 130, 246, 0.15),
+    transparent 70%
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* HOVER PRINCIPAL */
 .card:hover {
-  transform: translateY(-8px) scale(1.03);
+  transform: translateY(-10px) scale(1.03);
   border-color: rgba(59, 130, 246, 0.4);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 }
 
 /* TIPOGRAFIA */
-
 .card h3 {
   font-size: 20px;
   font-weight: 600;
@@ -42,7 +73,6 @@
 }
 
 /* IMAGEM */
-
 .image {
   width: 100%;
   height: 120px;
@@ -56,23 +86,25 @@
   filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6));
 
   transition: transform 0.3s ease;
+  z-index: 1;
 }
 
+/* zoom na imagem ao hover */
 .card:hover .image {
   transform: scale(1.08);
 }
 
 /* TAGS */
-
 .tags {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .tags span {
-  display: inline-block;
   font-size: 12px;
   padding: 6px 10px;
-  margin-right: 6px;
 
   background: rgba(59, 130, 246, 0.15);
   color: #60a5fa;
@@ -81,4 +113,12 @@
   font-weight: 500;
 
   border: 1px solid rgba(59, 130, 246, 0.2);
+
+  transition: all 0.3s ease;
+}
+
+/* hover nas tags */
+.tags span:hover {
+  background: rgba(59, 130, 246, 0.3);
+  transform: scale(1.05);
 }

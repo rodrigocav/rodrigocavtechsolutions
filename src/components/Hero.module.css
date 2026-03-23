@@ -10,7 +10,6 @@
   position: relative;
   overflow: hidden;
 
-  /* 🔥 fundo azul escuro moderno */
   background: radial-gradient(circle at top, #0b1220, #020617);
 
   opacity: 0;
@@ -18,47 +17,34 @@
   transition: all 0.8s ease;
 }
 
-/* animação de entrada */
+/* entrada */
 .show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* glow decorativo */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-
-  background: radial-gradient(
-    circle,
-    rgba(59, 130, 246, 0.25),
-    transparent 70%
-  );
-
-  top: -250px;
-  left: -200px;
-
-  filter: blur(90px);
-}
-
+/* glow */
+.hero::before,
 .hero::after {
   content: "";
   position: absolute;
+  filter: blur(90px);
+}
+
+.hero::before {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
+  top: -250px;
+  left: -200px;
+}
+
+.hero::after {
   width: 500px;
   height: 500px;
-
-  background: radial-gradient(
-    circle,
-    rgba(99, 102, 241, 0.2),
-    transparent 70%
-  );
-
+  background: radial-gradient(circle, rgba(99,102,241,0.2), transparent 70%);
   bottom: -200px;
   right: -150px;
-
-  filter: blur(90px);
 }
 
 .content {
@@ -67,35 +53,51 @@
   z-index: 1;
 }
 
-/* título */
-
-.content h1 {
+/* 🔥 DIGITAÇÃO */
+.typing {
   font-size: 56px;
   line-height: 1.2;
   color: #ffffff;
   margin-bottom: 20px;
   letter-spacing: -1px;
+
+  display: inline-block;
+}
+
+/* cursor piscando */
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: #3b82f6;
+  animation: blink 0.8s infinite;
 }
 
 /* subtítulo */
-
-.content p {
+.subtitle {
   font-size: 18px;
   color: #cbd5e1;
   margin-bottom: 32px;
   line-height: 1.6;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.6s;
 }
 
 /* botões */
-
 .buttons {
   display: flex;
   justify-content: center;
   gap: 16px;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.9s;
 }
 
 /* botão primário */
-
 .primary {
   background: #3b82f6;
   color: #fff;
@@ -115,7 +117,6 @@
 }
 
 /* botão secundário */
-
 .secondary {
   background: transparent;
   border: 1px solid #334155;
@@ -124,6 +125,10 @@
   padding: 12px 28px;
   border-radius: 999px;
   cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
 
   transition: all 0.3s ease;
   font-weight: 500;
@@ -135,13 +140,12 @@
   transform: translateY(-2px) scale(1.05);
 }
 
-/* cursor animado */
-
-.cursor {
-  display: inline-block;
-  margin-left: 4px;
-  color: #3b82f6;
-  animation: blink 0.8s infinite;
+/* animações */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes blink {
@@ -151,13 +155,12 @@
 }
 
 /* RESPONSIVO */
-
 @media (max-width: 768px) {
-  .content h1 {
+  .typing {
     font-size: 34px;
   }
 
-  .content p {
+  .subtitle {
     font-size: 16px;
   }
 
