@@ -31,7 +31,7 @@ export default function Hero() {
   }, [index]);
 
   return (
-    <section className={`${styles.hero} ${visible ? styles.show : ""}`}>
+    <section id="inicio" className={`${styles.hero} ${visible ? styles.show : ""}`}>
       <div className={styles.content}>
         
         <h1 className={styles.typing}>
@@ -45,14 +45,16 @@ export default function Hero() {
         </p>
 
         <div className={styles.buttons}>
-          <button className={styles.primary}>
-            Solicitar orçamento
-          </button>
-
           <a
             href="https://wa.me/5511999752005"
             target="_blank"
             rel="noopener noreferrer"
+            className={styles.primary}
+          >
+            Solicitar orçamento
+          </a>
+          <a
+            href="#sobre"
             className={styles.secondary}
           >
             Saiba mais

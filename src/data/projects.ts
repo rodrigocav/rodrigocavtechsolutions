@@ -9,23 +9,20 @@ import systemcalcpis from "../assets/systemcalcpis.png";
 export const projects = [
   {
     id: 1,
-    title: "Sistema de Automação",
-    description: "Soluções completas de automação para otimizar processos internos da sua empresa, reduzindo tarefas manuais, aumentando a produtividade e melhorando o controle das operações. Focado em eficiência, padronização de processos e geração de resultados mais rápidos com tecnologia.",
-    image: systempythonaut,
-    github: "https://github.com/rodrigocav/compras_xlsx",
+    title: "Site Profissional",
+    description: "Tenha um site moderno que transmite confiança e ajuda a atrair novos clientes todos os dias.",
+    image: siteempresa,
   },
   {
     id: 2,
-    title: "Site Institucional",
-    description: "Site moderno para apresentar sua empresa, destacar seus produtos e serviços e atrair clientes. Focado em design atrativo, informações claras e formas de contato para gerar oportunidades de negócio.",
-    image: siteempresa,
-    github: "https://github.com/rodrigocav/Site-Otica-Arte",
+    title: "Automação de Processos",
+    description: "Pare de perder tempo com tarefas manuais e automatize seu negócio para ganhar produtividade.",
+    image: systempythonaut,
   },
   {
     id: 3,
-    title: "Sistema de Cálculo de Impostos (PIS e IPI)",
-    description: "Sistema para cálculo e gerenciamento de impostos sobre vendas de produtos, com foco em PIS e IPI no contexto brasileiro. Permite cadastrar empresas e registrar múltiplos impostos, calculando automaticamente seus valores com base em fórmulas específicas.",
+    title: "Automação de Impostos",
+    description: "Evite erros e automatize o cálculo de impostos como PIS e IPI com mais segurança e rapidez.",
     image: systemcalcpis,
-    github: "https://github.com/seu-usuario/projeto3",
   },
 ];

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.jpeg";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,6 +61,13 @@ export default function Header() {
               setMenuOpen(false);
             }}
           >Projetos</button>
+          <button
+
+            onClick={() => {
+              handleScroll("reviews");
+              setMenuOpen(false);
+            }}
+          >Avaliações</button>
 
           <button
             onClick={() => {

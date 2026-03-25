@@ -1,0 +1,137 @@
+.reviews-section {
+  padding: 90px 20px;
+  background: radial-gradient(circle at top, #0b1220, #020617);
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.google-rating {
+  margin-bottom: 50px;
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 1.4rem;
+  display: block;
+}
+
+.rating-text {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 8px;
+  display: block;
+}
+
+.review-count {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto 50px;
+}
+
+.review-card {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+}
+
+.review-card h3 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.review-stars {
+  color: #f59e0b;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.review-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.review-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.btn-google {
+  display: inline-block;
+  background: #4285F4;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-google:hover {
+  background: #3367d6;
+}
+
+@media (max-width: 768px) {
+  .reviews-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 0 20px 15px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .reviews-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .review-card {
+    flex: 0 0 90%;
+    min-height: 340px;
+    padding: 36px 28px;
+    border-radius: 18px;
+    scroll-snap-align: center;
+  }
+
+  .review-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .review-stars {
+    font-size: 1rem;
+  }
+
+  .review-meta {
+    font-size: 0.8rem;
+  }
+
+  .review-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}

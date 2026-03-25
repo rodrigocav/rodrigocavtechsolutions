@@ -58,6 +58,17 @@
   z-index: 1;
 }
 
+.contact h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #ffffff;
+
+  position: relative;
+  z-index: 1;
+}
+
+
 /* INFO */
 
 .info {
@@ -153,10 +164,21 @@
   box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
 }
 
+.Copyright {
+  padding: 20px;
+  font-size: 14px;
+  text-align: center;
+  background: #020617;
+  color: #94a3b8;
+}
+
 /* RESPONSIVO */
 
 @media (max-width: 768px) {
   .contact h2 {
     font-size: 30px;
+  }
+  .contact h3 {
+    font-size: 15;
   }
 }

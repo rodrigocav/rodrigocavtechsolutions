@@ -36,10 +36,10 @@
 
 /* LOGO */
 .logo {
-  height: 60px;
-  width: auto;
+  height: 70px;
+  width: 70px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 30px;
 }
 
 /* MENU DESKTOP */

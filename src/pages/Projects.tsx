@@ -26,8 +26,8 @@ export default function Projects() {
 
   return (
     <section id="projetos" className={styles.projects}>
-      <h2>Projetos Realizados</h2>
-
+      <h2>Soluções para o seu negócio</h2>
+      <h3>Pare de perder tempo com tarefas manuais e automatize sua empresa<br></br>Soluções acessíveis a partir de R$  250,00</h3>
       <div className={styles.grid}>
         {projects.map((project, index) => (
           <div
@@ -43,14 +43,14 @@ export default function Projects() {
               <h3>{project.title}</h3>
               <p>{project.description}</p>
 
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.button}
-              >
-                Ver no GitHub
-              </a>
+            <a
+              href="https://wa.me/11999752005"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whatsappButton}
+            >
+              Falar no WhatsApp
+            </a>
             </div>
           </div>
         ))}

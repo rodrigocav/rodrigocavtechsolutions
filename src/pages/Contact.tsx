@@ -22,26 +22,38 @@ export default function Contact() {
   return (
     <section id="contato" className={styles.contact}>
       <h2>Entre em Contato</h2>
+      <h3>Precisa automatizar processos ou melhorar a produtividade da sua empresa?<br></br>Entre em contato e vamos encontrar uma solução simples e eficiente para o seu negócio.</h3>
 
       {/* INFO DE CONTATO */}
       <div className={styles.info}>
-        <p>📍 Brasil</p>
+        <p> Brasil</p>
 
         <p>
-          📧 Email:{" "}
+           Email:{" "}
           <a href="mailto:rodrigocavtechsolutions@gmail.com">
             rodrigocavtechsolutions@gmail.com
           </a>
         </p>
 
         <p>
-          📱 WhatsApp:{" "}
+           WhatsApp:{" "}
           <a
             href="https://wa.me/5511999752005"
             target="_blank"
             rel="noopener noreferrer"
           >
             (11) 99975-2005
+          </a>
+        </p>
+
+        <p>
+          Linkedin:{" "}
+          <a
+            href="https://www.linkedin.com/in/rodrigocavi/"
+             target="_blank"
+            rel="noopener noreferrer"
+          >
+            rodrigocav-linkedin
           </a>
         </p>
       </div>
@@ -76,6 +88,10 @@ export default function Contact() {
 
         <button type="submit">Enviar</button>
       </form>
+
+      <p className={styles.Copyright}>
+         Copyright © 2026 Rodrigo Cavicchioli | All Rights Reserved
+      </p>
     </section>
   );
 }
