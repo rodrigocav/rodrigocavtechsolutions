@@ -12,21 +12,21 @@ export default function Services() {
 
       <div className={styles.grid}>
         <ServiceCard
+          image={siteImg}
           title="Desenvolvimento de Sites"
           description="Sites modernos, rápidos e responsivos."
-          image={siteImg}
         />
 
         <ServiceCard
+          image={automacaoImg}
           title="Automação"
           description="Automatize processos e ganhe produtividade."
-          image={automacaoImg}
         />
 
         <ServiceCard
+          image={systemImg}
           title="Sistemas Personalizados"
           description="Soluções feitas sob medida para sua empresa."
-          image={systemImg}
         />
       </div>
     </section>

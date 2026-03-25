@@ -107,7 +107,20 @@
 /* responsivo */
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 0 16px 20px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 90%;
+    scroll-snap-align: center;
   }
 
   .services h2 {

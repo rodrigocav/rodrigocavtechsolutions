@@ -152,12 +152,26 @@
 /* RESPONSIVO */
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: 1fr;
+    display: flex;              
+    overflow-x: auto;           
+    gap: 20px;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 85%;              
+    scroll-snap-align: center;
   }
 
   .projects h2 {
     font-size: 30px;
   }
+
   .projects h3 {
     font-size: 18px;
   }
